@@ -4,6 +4,7 @@ pipeline {
     stage('Docker Build') {
       steps {
         sh 'docker build -t thirupathip/todo-r .'
+        sh 'docker push thirupathip/todo-r'
       }
     }
     stage('Docker Run') {
