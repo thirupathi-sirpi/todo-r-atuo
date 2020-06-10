@@ -8,7 +8,7 @@ pipeline {
     }
     stage('Docker Run') {
       steps {
-        sh 'docker run -d 300:80 thirupathip/todo-r'
+        sh 'docker run -it -d thirupathip/todo-r -p 300:80'
       }
     }
   }
