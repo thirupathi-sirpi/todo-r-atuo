@@ -29,8 +29,8 @@ COPY shiny-server.conf  /etc/shiny-server/shiny-server.conf
 COPY /app /srv/shiny-server/
 
 # Add shiny user
-RUN groupadd  shiny \
-&& useradd --gid shiny --shell /bin/bash --create-home shiny
+#RUN groupadd  shiny \
+#&& useradd --gid shiny --shell /bin/bash --create-home shiny
 
 # Make the ShinyApp available at port 80
 EXPOSE 3838
