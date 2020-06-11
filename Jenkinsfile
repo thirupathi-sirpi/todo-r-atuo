@@ -8,7 +8,9 @@ pipeline {
     }
     stage('Docker Run') {
       steps {
-        sh 'docker run -it -d thirupathip/todo-r -p 3838:3838'
+        sh 'docker stop $(docker ps -a -q)'
+        sh 'docker rm $(docker ps -a -q)'
+        sh 'docker run --rm -d -p 3838:3838 thirupathip/todo-r'
       }
     }
   }
